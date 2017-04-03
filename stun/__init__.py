@@ -240,6 +240,11 @@ def get_nat_type(s, source_ip, source_port, stun_host=None, stun_port=3478):
                         typ = RestricPortNAT
                 else:
                     typ = SymmetricNAT
+    # restore previously learned exIP and exPort in case of `RestricPortNat`
+    if ret['ExternalIP'] is None and exIP is not None:
+        ret['ExternalIP'] = exIP
+    if ret['ExternalPort'] is None and exPort is not None:
+        ret['ExternalPort'] = exPort
     return typ, ret
 
 
