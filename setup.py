@@ -1,5 +1,6 @@
 import os.path
-from setuptools import setup, find_packages
+
+from setuptools import find_packages, setup
 
 import stun
 
@@ -9,14 +10,14 @@ def main():
     README = open(os.path.join(src, 'README.rst')).read()
 
     setup(
-        name='pystun',
+        name='pystun-patched-for-raiden',
         version=stun.__version__,
         packages=find_packages(),
         zip_safe=False,
         license='MIT',
         author='Justin Riley (original author: gaohawk)',
         author_email='justin.t.riley@gmail.com',
-        url='http://github.com/jtriley/pystun',
+        url='http://github.com/lefterisjp/pystun',
         description='A Python STUN client for getting NAT type and external IP (RFC 3489)',
         long_description=README,
         keywords='STUN NAT',
